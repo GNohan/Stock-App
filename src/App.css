@@ -1,0 +1,14 @@
+.App {
+  width: 100%;
+  align-items: center;
+}
+
+.SearchBarContainer {
+  padding-top: 1vh;
+  width: 40%;
+  margin: auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
