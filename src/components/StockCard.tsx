@@ -19,50 +19,51 @@ function StockCard({selectedStockName}: any){
         '9. change': '',
         '10. changePercent': ''
     });
-    const [info, setInfo] = useState<string[]>([]);
 
     async function fetchStockData(){
+        const stock: StockQuote = {
+            '1. symbol': '',
+            '2. open': '',
+            '3. high': '',
+            '4. low': '',
+            '5. price': '',
+            '6. volume': '',
+            '7. latestTradingDay': '',
+            '8. previousClose': '',
+            '9. change': '',
+            '10. changePercent': ''
+        };
         console.log('fetching data');
         try {
             //API call gets the price and volume of ticker
             const res = await axios.get('https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=' + selectedStockName + '&apikey=PXT8MQ59QVP9QVVY');
-            if(res?.data?.Note){
-                console.log(res);
-                console.log('error getting data please wait')
-            }
-            else{
-                console.log('called api')
-                console.log(res.data['Global Quote']);
-                let q: StockQuote = {
-                    '1. symbol': res.data['Global Quote']['1. symbol'],
-                    '2. open': res.data['Global Quote']['2. open'],
-                    '3. high': res.data['Global Quote']['3. high'],
-                    '4. low': res.data['Global Quote']['4. low'],
-                    '5. price': res.data['Global Quote']['5. price'],
-                    '6. volume':res.data['Global Quote']['1. symbol'],
-                    '7. latestTradingDay': res.data['Global Quote']['1. symbol'],
-                    '8. previousClose': res.data['Global Quote']['1. symbol'],
-                    '9. change': res.data['Global Quote']['1. symbol'],
-                    '10. changePercent': res.data['Global Quote']['1. symbol']
-                }
-                setStock(q);
-            }
-        } 
-        catch (err) {
+            const s = res.data["Global Quote"];
 
+            stock['1. symbol'] = s['01. symbol'];
+            stock['5. price'] = s['05. price'];
         }
+        catch (err) {
+            console.log("Ticker doesn't exist. Please try again...");
+            return;
+        }
+
+        setStock(stock);
     }
 
-    useEffect(() => {setInfo(selectedStockName); console.log(getStock)}, [selectedStockName]);
+    useEffect(() => {
+        fetchStockData();
+    },[selectedStockName]);
 
     return(
         <div className='stock-card-container'>
             <CSSTransition nodeRef={nodeRef} in={flipState} timeout={300} classNames='flip'>
-                <div ref={nodeRef} className='stock-card' onClick={() => {setFlipState((v) => !v); fetchStockData();}}>
+                <div ref={nodeRef} className='stock-card' onClick={() => {setFlipState((v) => !v);}}>
                     <div className="front">
-                        {info[0]}
-                        {info[1]}
-                        {getStock['5. price']}
+                        <div className='stockName'>{getStock['1. symbol']}</div>
+                        <div className ='dataBox price'>
+                            <p>{'Close \n'}</p>
+                            {'$' + parseFloat(getStock['5. price']).toFixed(2)}
+                        </div>  
                     </div>
                     <div className="back">
                     Back

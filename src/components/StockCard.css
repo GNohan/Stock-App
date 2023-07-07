@@ -1,5 +1,5 @@
 .stock-card-container {
-    padding-top: 10em;
+    padding-top: 8em;
     position: relative;
     width: 25em;
     height: 30em;
@@ -83,4 +83,36 @@
 
 .flip-enter-done {
     transform: rotateY(0deg);
+}
+
+/*Front Card Inner Stylings*/
+.stockName {
+    position: absolute;
+    font-size: 1em;
+    top: 0;
+    left: 25%;
+}
+
+    /*Styling for each data box -- Will have seperate positioning based on which one*/
+.dataBox {
+    background-color: brown;
+    font-size: 0.5em;
+
+    position: absolute;
+    padding: 0;
+    margin-top: 5%;
+    top: 20%;
+    left: 5%;
+
+    width: 45%;
+    height: 20%;
+
+    line-height: 0.3em;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.dataBox > p {
+    font-size: 0.5em;
 }

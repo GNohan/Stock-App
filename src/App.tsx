@@ -1,19 +1,14 @@
-import { useState, useEffect} from 'react'
+import { useState} from 'react'
 import './App.css'
 import StockCard from './components/StockCard';
 import SearchBar from './components/SearchBar';
 
-
 function App() {
-  const [selectedStockName, setSelectedStockName] = useState<string[]>([]);
+  const [selectedStockName, setSelectedStockName] = useState<string>();
 
-  const setStockNameCallback = (name:string[]) => {
-     setSelectedStockName(name);
+  const setStockNameCallback = (name:any) => {
+    setSelectedStockName(name);
   }
-
-  useEffect(() => {
-    console.log('Selected stock: ' + selectedStockName);
-  },[selectedStockName]);
 
   return (
     <div className="App">
