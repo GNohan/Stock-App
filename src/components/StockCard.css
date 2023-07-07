@@ -24,7 +24,6 @@
     border:5px solid white; 
 
     user-select: none;
-    cursor: pointer;
 }
 
 .front, .back {
@@ -87,10 +86,28 @@
 
 /*Front Card Inner Stylings*/
 .stockName {
+    background-color: blueviolet;
+    width: 100%;
+    height: 18%;
+    display: block;
     position: absolute;
-    font-size: 1em;
     top: 0;
-    left: 25%;
+    padding-top: 2.5%;
+    margin: 0;
+    line-height: 0.5em;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.stockName > h1 {
+    font-size: 0.6em;
+    padding: 0;
+    margin: 0;
+}
+.stockName > h2 {
+    font-size: 0.25em;
+    padding: 0;
+    margin: 0;
 }
 
     /*Styling for each data box -- Will have seperate positioning based on which one*/
@@ -101,10 +118,8 @@
     position: absolute;
     padding: 0;
     margin-top: 5%;
-    top: 20%;
-    left: 5%;
 
-    width: 45%;
+    width: 42.5%;
     height: 20%;
 
     line-height: 0.3em;
@@ -115,4 +130,57 @@
 
 .dataBox > p {
     font-size: 0.5em;
+}
+
+.openPrice {
+    top: 18%;
+    left: 5%;
+}
+
+.closePrice {
+    top: 18%;
+    right: 5%;
+}
+
+.change {
+    top: 40%;
+    left: 5%;
+}
+
+.percentChange {
+    top: 40%;
+    right: 5%;
+}
+
+.volume {
+    font-size: 0.45em;
+    top: 62%;
+    left: 5%;
+}
+
+.highlow {
+    top: 62%;
+    right: 5%;
+}
+
+.details {
+    background-color: blueviolet;
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+
+    font-size: 0.4em;
+    line-height: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+.details > p {
+    margin-top: 0.75em;
+    padding: 0;
 }
