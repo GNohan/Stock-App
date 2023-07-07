@@ -4,6 +4,7 @@ import StockCard from './components/StockCard';
 import SearchBar from './components/SearchBar';
 
 function App() {
+  const [watchlist, setWatchlist] = useState<string[]>([]);
   const [selectedStockName, setSelectedStockName] = useState<string>();
 
   const setStockNameCallback = (name:any) => {
@@ -15,7 +16,10 @@ function App() {
       <div className='SearchBarContainer'>
         <SearchBar setStockNameCallback={setStockNameCallback}/>
       </div>
-        <StockCard selectedStockName={selectedStockName}/>
+      <StockCard selectedStockName={selectedStockName}/>
+      <div className='watchlist'>
+        <div className='title'>Watchlist</div>
+      </div>
     </div>
   )
 }

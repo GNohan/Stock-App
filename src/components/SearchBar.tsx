@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {FaSearch} from 'react-icons/fa';
-import './SearchBar.css';
+import './styles/SearchBar.css';
 
 function SearchBar({setStockNameCallback}: any){
     const [input, setInput] = useState<string>("");

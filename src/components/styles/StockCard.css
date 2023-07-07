@@ -1,3 +1,4 @@
+/*General stock card styles*/
 .stock-card-container {
     padding-top: 8em;
     position: relative;
@@ -84,85 +85,7 @@
     transform: rotateY(0deg);
 }
 
-/*Front Card Inner Stylings*/
-.stockName {
-    background-color: blueviolet;
-    width: 100%;
-    height: 18%;
-    display: block;
-    position: absolute;
-    top: 0;
-    padding-top: 2.5%;
-    margin: 0;
-    line-height: 0.5em;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.stockName > h1 {
-    font-size: 0.6em;
-    padding: 0;
-    margin: 0;
-}
-.stockName > h2 {
-    font-size: 0.25em;
-    padding: 0;
-    margin: 0;
-}
-
-    /*Styling for each data box -- Will have seperate positioning based on which one*/
-.dataBox {
-    background-color: brown;
-    font-size: 0.5em;
-
-    position: absolute;
-    padding: 0;
-    margin-top: 5%;
-
-    width: 42.5%;
-    height: 20%;
-
-    line-height: 0.3em;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.dataBox > p {
-    font-size: 0.5em;
-}
-
-.openPrice {
-    top: 18%;
-    left: 5%;
-}
-
-.closePrice {
-    top: 18%;
-    right: 5%;
-}
-
-.change {
-    top: 40%;
-    left: 5%;
-}
-
-.percentChange {
-    top: 40%;
-    right: 5%;
-}
-
-.volume {
-    font-size: 0.45em;
-    top: 62%;
-    left: 5%;
-}
-
-.highlow {
-    top: 62%;
-    right: 5%;
-}
-
+/*Front and back styles*/
 .details {
     background-color: blueviolet;
 

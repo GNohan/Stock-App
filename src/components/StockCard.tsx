@@ -1,4 +1,6 @@
-import './StockCard.css';
+import './styles/FrontCardStyles.css';
+import './styles/BackCardStyles.css';
+import './styles/StockCard.css';
 import axios from 'axios';
 import {useState, useRef, useEffect} from 'react';
 import {CSSTransition} from 'react-transition-group';
@@ -100,7 +102,9 @@ function StockCard({selectedStockName}: any){
                         </div>
                     </div>
                     <div className="back">
-                    Back
+                        <div className='secIndustry'>Sector and Industry</div>
+                        <div className='ratio'>P/E Ratio</div>
+                        <div className ='description expandable'>Expandable description</div>
                         <div className='details' onClick={() => {setFlipState((v) => !v);}}>
                             <p>Back to the front</p>
                         </div>
